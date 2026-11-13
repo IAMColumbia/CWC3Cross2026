@@ -442,7 +442,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 834bc99524a174a378e982623582c06d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.459
+  m_Volume: 0.148
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -735,6 +735,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1419152992, guid: fb82dfb8d1c7044c69afd2486befecb3, type: 3}
   m_PrefabInstance: {fileID: 1157145868}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1157145870 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1438565936, guid: fb82dfb8d1c7044c69afd2486befecb3, type: 3}
+  m_PrefabInstance: {fileID: 1157145868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1171320987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -898,7 +903,9 @@ MonoBehaviour:
   gravityModifier: 4
   isOnGround: 1
   explosionParticle: {fileID: 1620633762}
-  dirtParticle: {fileID: 0}
+  dirtParticle: {fileID: 1157145870}
+  jumpSound: {fileID: 8300000, guid: 08ab7053d586c458db3774d33c141a4b, type: 3}
+  crashSound: {fileID: 8300000, guid: e7ee25a47d63b46cdaf65480d62b405c, type: 3}
   GameOver: 0
 --- !u!4 &1171320993 stripped
 Transform:
