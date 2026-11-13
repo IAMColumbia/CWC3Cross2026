@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator playerAnim;
     public ParticleSystem explosionParticle;
+    public ParticleSystem dirtParticle;
 
     public bool GameOver = false;
 
@@ -29,12 +30,13 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
             playerAnim.SetTrigger("Jump_trig");
+            dirtParticle.Stop();
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground")) { isOnGround = true; }
+        if (collision.gameObject.CompareTag("Ground")) { isOnGround = true; dirtParticle.Play(); }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
             GameOver = true;
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("Death_b", true);
             playerAnim.SetInteger("DeathType_int", 1);
             explosionParticle.Play();
+            dirtParticle.Stop();
         }
     }
 }
