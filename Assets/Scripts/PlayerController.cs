@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround = true;
 
     private Animator playerAnim;
+    public ParticleSystem explosionParticle;
 
     public bool GameOver = false;
 
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Game Over");
             playerAnim.SetBool("Death_b", true);
             playerAnim.SetInteger("DeathType_int", 1);
+            explosionParticle.Play();
         }
     }
 }
